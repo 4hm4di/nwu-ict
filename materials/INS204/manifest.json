@@ -11,6 +11,31 @@
       "size": 992085
     },
     {
+      "title": "Use case diagram",
+      "file": "INS204 - Use Case Diagram.pdf",
+      "type": "pdf",
+      "source": "lecturer",
+      "pages": 6,
+      "size": 527116
+    },
+    {
+      "title": "Activity diagram",
+      "file": "INS204 - Activity Diagram.pdf",
+      "type": "pdf",
+      "source": "lecturer",
+      "pages": 22,
+      "size": 594974
+    },
+    {
+      "title": "E-R (entity relationship) diagram",
+      "file": "INS204 - E-R Diagram.pdf",
+      "type": "pdf",
+      "source": "lecturer",
+      "note": "Converted from the lecturer’s PowerPoint slides so it opens on any phone.",
+      "pages": 16,
+      "size": 2105773
+    },
+    {
       "title": "INS204 past questions",
       "file": "INS204__PQ.pdf",
       "type": "pdf",
