@@ -1,0 +1,16 @@
+{
+  "course": "COS202",
+  "title": "Computer Programming II",
+  "materials": [
+    {
+      "title": "COS201 Computer Programming I lecture notes",
+      "file": "COS201 Computer Programming I - Lecture Notes.pdf",
+      "type": "pdf",
+      "source": "lecturer",
+      "by": "Aminu Abdulkadir Mahmoud and others",
+      "note": "The lecturer said to use the COS201 lecture notes for COS202.",
+      "pages": 329,
+      "size": 2000833
+    }
+  ]
+}

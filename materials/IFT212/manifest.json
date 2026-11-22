@@ -1,0 +1,23 @@
+{
+  "course": "IFT212",
+  "title": "Computer Architecture and Organisation",
+  "materials": [
+    {
+      "title": "Computer Architecture and Organisation lecture notes",
+      "file": "IFT212 - Computer Architecture and Organisation Notes.pdf",
+      "type": "pdf",
+      "source": "lecturer",
+      "by": "Ibrahim Isah Nayaya",
+      "pages": 60,
+      "size": 1463421
+    },
+    {
+      "title": "ICT212 Computer Architecture & Organisation",
+      "file": "ICT212 - Computer Architecture & Organisation.pdf",
+      "type": "pdf",
+      "source": "other",
+      "pages": 27,
+      "size": 1000205
+    }
+  ]
+}

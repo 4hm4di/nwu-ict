@@ -1,0 +1,95 @@
+{
+  "course": "GST212",
+  "title": "Philosophy, Logic and Human Existence",
+  "materials": [
+    {
+      "title": "Lecture 1: Meaning and nature of philosophy",
+      "file": "GST212 - Lecture 1 - Meaning and Nature of Philosophy.pdf",
+      "type": "pdf",
+      "source": "lecturer",
+      "by": "Saheed Olanrewaju Jabaar, PhD",
+      "pages": 4,
+      "size": 333788
+    },
+    {
+      "title": "Lecture 2: Branches of philosophy",
+      "file": "GST212 - Lecture 2 - Branches of Philosophy.pdf",
+      "type": "pdf",
+      "source": "lecturer",
+      "by": "Saheed Olanrewaju Jabaar, PhD",
+      "pages": 6,
+      "size": 330147
+    },
+    {
+      "title": "Lecture 3: Problems of philosophy",
+      "file": "GST212 - Lecture 3 - Problems of Philosophy.pdf",
+      "type": "pdf",
+      "source": "lecturer",
+      "by": "Saheed Olanrewaju Jabaar, PhD",
+      "pages": 4,
+      "size": 315810
+    },
+    {
+      "title": "Lecture 4: Logic",
+      "file": "GST212 - Lecture 4 - Logic.pdf",
+      "type": "pdf",
+      "source": "lecturer",
+      "by": "Saheed Olanrewaju Jabaar, PhD",
+      "pages": 6,
+      "size": 423033
+    },
+    {
+      "title": "Lecture 5: Logic's vocabulary",
+      "file": "GST212 - Lecture 5 - Logics Vocabulary.pdf",
+      "type": "pdf",
+      "source": "lecturer",
+      "by": "Saheed Olanrewaju Jabaar, PhD",
+      "pages": 6,
+      "size": 428300
+    },
+    {
+      "title": "Lecture 6: Syllogism",
+      "file": "GST212 - Lecture 6 - Syllogism.pdf",
+      "type": "pdf",
+      "source": "lecturer",
+      "by": "Saheed Olanrewaju Jabaar, PhD",
+      "pages": 4,
+      "size": 660322
+    },
+    {
+      "title": "Lecture 7: Fallacy",
+      "file": "GST212 - Lecture 7 - Fallacy.pdf",
+      "type": "pdf",
+      "source": "lecturer",
+      "by": "Saheed Olanrewaju Jabaar, PhD",
+      "pages": 6,
+      "size": 1052247
+    },
+    {
+      "title": "Lecture 8: Philosophy and politics",
+      "file": "GST212 - Lecture 8 - Philosophy and Politics.pdf",
+      "type": "pdf",
+      "source": "lecturer",
+      "by": "Saheed Olanrewaju Jabaar, PhD",
+      "pages": 4,
+      "size": 790655
+    },
+    {
+      "title": "Lecture 9: Philosophy and human conduct",
+      "file": "GST212 - Lecture 9 - Philosophy and Human Conduct.pdf",
+      "type": "pdf",
+      "source": "lecturer",
+      "by": "Saheed Olanrewaju Jabaar, PhD",
+      "pages": 4,
+      "size": 724289
+    },
+    {
+      "title": "Introduction to philosophy past questions",
+      "file": "INTRODUCTION TO PHILOSOPHY PASS QUESTION .pdf",
+      "type": "pdf",
+      "source": "other",
+      "pages": 5,
+      "size": 2945295
+    }
+  ]
+}

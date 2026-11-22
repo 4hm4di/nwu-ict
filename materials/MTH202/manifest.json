@@ -1,0 +1,30 @@
+{
+  "course": "MTH202",
+  "title": "Elementary Differential Equations",
+  "materials": [
+    {
+      "title": "Elementary Differential Equations lecture notes",
+      "file": "MTH202 - Elementary Differential Equations Notes.pdf",
+      "type": "pdf",
+      "source": "lecturer",
+      "pages": 75,
+      "size": 1385725
+    },
+    {
+      "title": "D.E. MTH2302",
+      "file": "D.E Mth2302.pdf",
+      "type": "pdf",
+      "source": "other",
+      "pages": 75,
+      "size": 9509100
+    },
+    {
+      "title": "Differential equations",
+      "file": "DIFFERENTIAL EQUATIONS.pdf",
+      "type": "pdf",
+      "source": "other",
+      "pages": 97,
+      "size": 9368374
+    }
+  ]
+}

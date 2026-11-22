@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0F2438">
+<title>Course Material • Northwest University, Kano</title>
+<link rel="icon" type="image/svg+xml" sizes="32x32" href="assets/favicon-32.svg">
+<link rel="icon" type="image/svg+xml" sizes="64x64" href="assets/favicon-64.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="hero hero-course" id="courseHero">
+  <button class="announce-bell" id="announceBell" title="Announcements" aria-label="Announcements">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+    <span class="badge" id="bellBadge"></span>
+  </button>
+  <div class="hero-ascii" id="heroAscii" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <a class="back-link reveal" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>Back to timetable</a>
+    <div class="course-heading reveal" style="--d:80ms">
+      <img class="crest" src="assets/nwu-crest.png" alt="Northwest University, Kano crest">
+      <div>
+        <p class="course-code-big" id="courseCode"></p>
+        <h1 id="courseTitle">Loading…</h1>
+        <p class="course-when" id="courseSub"></p>
+      </div>
+    </div>
+    <nav class="course-nav reveal" style="--d:180ms" id="switcher" aria-label="Courses"><span class="tab-indicator" aria-hidden="true"></span></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="exam reveal" id="exam" aria-label="Exam countdown">
+    <div class="exam-top">
+      <div>
+        <p class="exam-days" id="examDays"><span class="num">24</span> days to exams</p>
+        <p class="exam-when" id="examWhen">Monday, 30 November 2026 <a class="exam-link" href="index.html#exams">See the exam timetable</a></p>
+      </div>
+      <p class="exam-msg" id="examMsg">Study to understand, not just to pass.</p>
+    </div>
+    <div class="exam-bar-row">
+      <div class="exam-bar" id="examBar" role="progressbar" aria-label="Semester progress towards exams" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <span class="exam-fill" id="examFill"></span>
+      </div>
+      <span class="exam-pct" id="examPct"></span>
+    </div>
+  </section>
+
+  <div id="materialList"></div>
+
+  <div class="empty-state" id="emptyState" style="display:none;">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg>
+    <p><strong>No materials for this course yet</strong></p>
+    <p>Notes and slides will show here once they are added.</p>
+  </div>
+
+  <footer class="reveal">
+    <span>Developed by <a href="https://wa.me/+2348103301999" target="_blank" rel="noopener">ƏҺmӘгDi</a></span>
+  </footer>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<div class="announce-backdrop" id="announceBackdrop"></div>
+
+<div class="announce-modal" id="announceModal">
+  <button class="icon-btn announce-modal-close" id="announceModalClose" title="Close">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="M6 6l12 12"/></svg>
+  </button>
+  <button class="slider-nav prev" id="announceSliderPrev" title="Previous" aria-label="Previous announcement">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <button class="slider-nav next" id="announceSliderNext" title="Next" aria-label="Next announcement">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+  <div class="announce-slider-viewport">
+    <div class="announce-slider-track" id="announceSliderTrack"></div>
+  </div>
+  <div class="announce-dots" id="announceDots"></div>
+</div>
+
+
+<div class="announce-panel" id="announcePanel">
+  <div class="announce-panel-head">
+    <h3>Announcements</h3>
+    <button class="icon-btn" id="announcePanelClose" title="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="announce-panel-body" id="announcePanelList"></div>
+</div>
+
+<script src="assets/motion.js"></script>
+<script src="assets/courses-data.js"></script>
+<script src="assets/materials.js"></script>
+<script src="assets/exams-data.js"></script>
+<script src="assets/schedule.js"></script>
+<script src="assets/exam-countdown.js"></script>
+<script src="assets/announcements-data.js"></script>
+<script src="assets/announcements.js"></script>
+<script src="assets/gradient-ascii.js"></script>
+<script src="assets/hero-fx.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0F2438">
+<title>ICT Departmental Timetable • Northwest University, Kano</title>
+<link rel="icon" type="image/svg+xml" sizes="32x32" href="assets/favicon-32.svg">
+<link rel="icon" type="image/svg+xml" sizes="64x64" href="assets/favicon-64.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="hero">
+  <button class="announce-bell" id="announceBell" title="Announcements" aria-label="Announcements">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+    <span class="badge" id="bellBadge"></span>
+  </button>
+  <div class="hero-ascii" id="heroAscii" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="brand reveal" style="--d:0ms">
+        <img class="crest" src="assets/nwu-crest.png" alt="Northwest University, Kano crest">
+        <div class="brand-text"><strong>Northwest University, Kano</strong>Faculty of Computing, Department of ICT</div>
+      </div>
+      <h1 class="reveal" style="--d:80ms">ICT class timetable</h1>
+      <p class="sub reveal" style="--d:160ms">Second semester, 2025/2026. Six courses, four days, lectures until 30 November.</p>
+    </div>
+    <div class="next-card reveal" style="--d:240ms" id="nextCard" aria-live="polite"></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="exam reveal" id="exam" aria-label="Exam countdown">
+    <div class="exam-top">
+      <div>
+        <p class="exam-days" id="examDays"><span class="num">24</span> days to exams</p>
+        <p class="exam-when" id="examWhen">Monday, 30 November 2026 <a class="exam-link" href="#exams">See the exam timetable</a></p>
+      </div>
+      <p class="exam-msg" id="examMsg">Study to understand, not just to pass.</p>
+    </div>
+    <div class="exam-bar-row">
+      <div class="exam-bar" id="examBar" role="progressbar" aria-label="Semester progress towards exams" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <span class="exam-fill" id="examFill"></span>
+      </div>
+      <span class="exam-pct" id="examPct"></span>
+    </div>
+  </section>
+
+  <section class="exams" id="exams" aria-labelledby="examsHeading" hidden>
+    <div class="section-head reveal exams-head">
+      <div>
+        <h2 id="examsHeading">Exam timetable</h2>
+        <p>Our six papers, from the university's <strong>tentative</strong> timetable. Dates may still change.</p>
+      </div>
+      <button class="btn btn-secondary" id="examAll" type="button"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4"/><path d="M16 3v4"/></svg> Add all to calendar</button>
+    </div>
+    <div class="test-list" id="examList"></div>
+  </section>
+
+  <section class="tests" id="tests" aria-labelledby="testsHeading" hidden>
+    <div class="section-head reveal">
+      <h2 id="testsHeading">Upcoming tests</h2>
+      <p>Add each one to your calendar to get reminders.</p>
+    </div>
+    <div class="test-list" id="testList"></div>
+  </section>
+
+  <div class="section-head reveal">
+    <h2>Courses</h2>
+    <p>Add a class to your calendar or open its materials.</p>
+    <div class="tabs" id="tabs" role="tablist">
+      <span class="tab-indicator" aria-hidden="true"></span>
+      <button class="tab active" data-day="all">All</button>
+      <button class="tab" data-day="2"><span class="long">Tuesday</span><span class="short">Tue</span></button>
+      <button class="tab" data-day="3"><span class="long">Wednesday</span><span class="short">Wed</span></button>
+      <button class="tab" data-day="4"><span class="long">Thursday</span><span class="short">Thu</span></button>
+      <button class="tab" data-day="5"><span class="long">Friday</span><span class="short">Fri</span></button>
+    </div>
+  </div>
+
+  <div class="list" id="list"></div>
+
+  <div class="note-row reveal">
+    <div class="note">
+      <p class="note-title">Latest updates</p>
+      <div class="update">
+        <span class="update-date">21 Nov</span>
+        <p><strong>Exams:</strong> the tentative exam timetable is out. Our first paper is GST212 on Mon 30 Nov and the last is INS204 on Thu 17 Dec. See the <a href="#exams">exam timetable</a>.</p>
+      </div>
+      <div class="update">
+        <span class="update-date">6 Nov</span>
+        <p><strong>Materials:</strong> lecturer notes added for all six courses, marked “Given by the lecturer”. For COS202, use the COS201 notes, as the lecturer said.</p>
+      </div>
+      <div class="update">
+        <span class="update-date">22 Sep</span>
+        <p><strong>Timetable:</strong> MTH202 (Elementary Differential Equations) now holds on Wednesday, 12–2pm at Faculty of Science Hall 4, Main Campus.</p>
+      </div>
+    </div>
+    <img class="footer-logo" src="assets/ug-chip.svg" alt="UG24 ICT class symbol">
+  </div>
+
+  <footer class="reveal">
+    <span>Developed by <a href="https://wa.me/+2348103301999" target="_blank" rel="noopener">ƏҺmӘгDi</a></span>
+  </footer>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<div class="announce-backdrop" id="announceBackdrop"></div>
+
+<div class="announce-modal" id="announceModal">
+  <button class="icon-btn announce-modal-close" id="announceModalClose" title="Close">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="M6 6l12 12"/></svg>
+  </button>
+  <button class="slider-nav prev" id="announceSliderPrev" title="Previous" aria-label="Previous announcement">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <button class="slider-nav next" id="announceSliderNext" title="Next" aria-label="Next announcement">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+  <div class="announce-slider-viewport">
+    <div class="announce-slider-track" id="announceSliderTrack"></div>
+  </div>
+  <div class="announce-dots" id="announceDots"></div>
+</div>
+
+
+<div class="announce-panel" id="announcePanel">
+  <div class="announce-panel-head">
+    <h3>Announcements</h3>
+    <button class="icon-btn" id="announcePanelClose" title="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="announce-panel-body" id="announcePanelList"></div>
+</div>
+
+<script src="assets/motion.js"></script>
+<script src="assets/courses-data.js"></script>
+<script src="assets/tests-data.js"></script>
+<script src="assets/exams-data.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/schedule.js"></script>
+<script src="assets/exam-countdown.js"></script>
+<script src="assets/announcements-data.js"></script>
+<script src="assets/announcements.js"></script>
+<script src="assets/gradient-ascii.js"></script>
+<script src="assets/hero-fx.js"></script>
+</body>
+</html>

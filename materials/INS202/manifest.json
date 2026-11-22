@@ -1,0 +1,30 @@
+{
+  "course": "INS202",
+  "title": "Human-Computer Interface",
+  "materials": [
+    {
+      "title": "Principles of user interface design",
+      "file": "INS202 - Principles of User Interface Design.pdf",
+      "type": "pdf",
+      "source": "lecturer",
+      "pages": 9,
+      "size": 219240
+    },
+    {
+      "title": "Principles of GUI",
+      "file": "INS202 - Principles of GUI.pdf",
+      "type": "pdf",
+      "source": "lecturer",
+      "pages": 11,
+      "size": 249678
+    },
+    {
+      "title": "ITC2308 Human Computer Interface lecture note",
+      "file": "ITC2308 - Human Computer Interface lecture Note.pdf",
+      "type": "pdf",
+      "source": "other",
+      "pages": 51,
+      "size": 664616
+    }
+  ]
+}
