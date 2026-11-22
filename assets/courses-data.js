@@ -256,54 +256,6 @@ const COURSES = [
         "source": "other",
         "pages": 1,
         "size": 7916
-      },
-      {
-        "title": "Topic 1: Overview of system analysis and design",
-        "file": "Topic 1 - Overview of System Analysis and Design.pdf",
-        "type": "pdf",
-        "source": "other",
-        "pages": 48,
-        "size": 900530
-      },
-      {
-        "title": "Topic 2: Overview of system development",
-        "file": "Topic 2- Overview of System Development.pdf",
-        "type": "pdf",
-        "source": "other",
-        "pages": 39,
-        "size": 520485
-      },
-      {
-        "title": "Topic 3: Methods of system development",
-        "file": "Topic 3- Methods of System Development.pdf",
-        "type": "pdf",
-        "source": "other",
-        "pages": 28,
-        "size": 481291
-      },
-      {
-        "title": "Topic 4: Requirement analysis",
-        "file": "Topic 4-Requirement Analysis.pdf",
-        "type": "pdf",
-        "source": "other",
-        "pages": 48,
-        "size": 837198
-      },
-      {
-        "title": "Topic 5: Use case diagram & specification",
-        "file": "Topic 5- Use Case Diagram & Specification.pdf",
-        "type": "pdf",
-        "source": "other",
-        "pages": 38,
-        "size": 520521
-      },
-      {
-        "title": "Topic 6: Activity diagrams",
-        "file": "Topic 6- Activity Diagrams.pdf",
-        "type": "pdf",
-        "source": "other",
-        "pages": 18,
-        "size": 589681
       }
     ]
   },
