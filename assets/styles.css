@@ -626,3 +626,45 @@ html:not(.js) .exam-fill{transform:scaleX(var(--p, 0));}
   .exams-head .btn{width:100%;}
   .exam-link{display:inline-block;margin:2px 0 0;}
 }
+
+/* ---------- LECTURE TIMETABLE (collapsible) ---------- */
+.lectures{margin-top:36px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.lectures-toggle{
+  width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:18px 2px;background:none;border:0;cursor:pointer;text-align:left;font:inherit;color:inherit;
+}
+.lt-title{display:block;font-family:var(--serif);font-weight:600;font-size:22px;color:var(--ink);}
+.lt-sub{display:block;margin-top:2px;font-size:14px;color:var(--muted);}
+.lt-chev{
+  flex:0 0 auto;width:36px;height:36px;border-radius:50%;
+  border:1px solid var(--line);background:#fff;
+  display:grid;place-items:center;
+  transition:transform 300ms var(--ease-out), background-color 150ms ease;
+}
+.lt-chev svg{width:18px;height:18px;stroke:var(--sky-deep);}
+.lectures.open .lt-chev{transform:rotate(180deg);}
+.lectures-toggle:active .lt-chev{transform:scale(0.92);}
+.lectures.open .lectures-toggle:active .lt-chev{transform:rotate(180deg) scale(0.92);}
+@media (hover:hover) and (pointer:fine){ .lectures-toggle:hover .lt-chev{background:var(--paper);} }
+
+.lectures-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows 320ms var(--ease-out);}
+.lectures.open .lectures-body{grid-template-rows:1fr;}
+.lectures-inner{min-height:0;overflow:hidden;}
+.lectures.settled .lectures-inner{overflow:visible;}
+.lectures-inner > *{opacity:0;transform:translateY(-6px);transition:opacity 160ms ease, transform 200ms var(--ease-out);}
+.lectures.open .lectures-inner > *{opacity:1;transform:none;transition:opacity 260ms ease 80ms, transform 320ms var(--ease-out) 40ms;}
+.lectures.instant .lectures-body,.lectures.instant .lectures-inner > *,.lectures.instant .lt-chev{transition:none !important;}
+.lectures .section-head{margin-top:0;}
+.lectures.open .lectures-inner{padding-bottom:12px;}
+
+/* header link to the next paper */
+.next-what a{color:inherit;text-decoration:none;}
+@media (hover:hover) and (pointer:fine){ .next-what a:hover{text-decoration:underline;text-underline-offset:3px;} }
+
+/* exam rows carry two actions */
+.test-row .row-action{gap:8px;}
+@media (max-width:560px){ .test-row .row-action .btn{flex:1 1 0;} }
+
+@media (prefers-reduced-motion: reduce){
+  .lectures-body,.lectures-inner > *,.lt-chev{transition:none !important;}
+}

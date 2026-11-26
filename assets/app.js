@@ -206,9 +206,46 @@ function renderNextCard(next){
     <p class="next-where">${c.venue}</p>`;
 }
 
+// Lecture timetable folds away while exams are the focus. The visitor's
+// choice is remembered on their device.
+const lectures = document.getElementById('lectures');
+const lecturesToggle = document.getElementById('lecturesToggle');
+const lecturesBody = document.getElementById('lecturesBody');
+const LECTURES_KEY = 'nwu_ict_lectures_open';
+
+function setLectures(open, animate){
+  if (!lectures) return;
+  const reduce = window.Motion && Motion.reduce;
+  if (!animate || reduce) lectures.classList.add('instant');
+  lectures.classList.toggle('open', open);
+  lectures.classList.remove('settled');
+  lecturesToggle.setAttribute('aria-expanded', String(open));
+  if (open) lecturesBody.removeAttribute('inert'); else lecturesBody.setAttribute('inert', '');
+  try { localStorage.setItem(LECTURES_KEY, open ? '1' : '0'); } catch (e) {}
+  const settle = () => {
+    lectures.classList.remove('instant');
+    if (lectures.classList.contains('open')) {
+      lectures.classList.add('settled'); // lets glows and highlights spill past the edges
+      if (window.Motion) Motion.moveIndicator(tabsEl, tabsEl.querySelector('.tab.active'), false);
+    }
+  };
+  if (!animate || reduce) { requestAnimationFrame(settle); return; }
+  clearTimeout(lectures._t);
+  lectures._t = setTimeout(settle, 340);
+}
+
+if (lecturesToggle) lecturesToggle.addEventListener('click', () => {
+  setLectures(!lectures.classList.contains('open'), true);
+});
+
 // Highlight a course row once the page has finished scrolling to it.
 function focusRow(row){
   if (!row) return;
+  if (lectures && lectures.contains(row) && !lectures.classList.contains('open')) {
+    setLectures(true, true);
+    setTimeout(() => focusRow(row), 360);
+    return;
+  }
   const reduce = window.Motion && Motion.reduce;
   const play = () => {
     row.classList.remove('focus');
@@ -340,9 +377,29 @@ window.addEventListener('resize', () => {
   if (window.Motion) Motion.moveIndicator(tabsEl, tabsEl.querySelector('.tab.active'), false);
 });
 
+function renderPaperCard(paper){
+  const el = document.getElementById('nextCard');
+  if (!el) return false;
+  const e = paper.exam;
+  const live = paper.when === 'Happening now';
+  el.innerHTML = `
+    <p class="next-when"><span class="live-dot" aria-hidden="true"></span>${live ? 'Happening now' : 'Next paper: ' + paper.label + ' (' + paper.when.toLowerCase() + ')'}</p>
+    <p class="next-what"><a href="#${e.id}">${e.code} ${e.title}</a></p>
+    <p class="next-where">${e.venue}</p>`;
+  return true;
+}
+
 const _next = findNextClass();
-renderNextCard(_next);
 render('all', 'initial');
+// schedule.js loads after this file, so pick the card once everything is in.
+document.addEventListener('DOMContentLoaded', () => {
+  const paper = window.nextPaper && window.nextPaper();
+  if (!(paper && renderPaperCard(paper))) renderNextCard(_next);
+});
+
+let lecturesOpen = false;
+try { lecturesOpen = localStorage.getItem(LECTURES_KEY) === '1'; } catch (e) {}
+setLectures(lecturesOpen, false);
 if (/^#course-[A-Z0-9]+$/.test(location.hash)) {
   const target = document.getElementById(location.hash.slice(1));
   if (target) setTimeout(() => focusRow(target), 400);

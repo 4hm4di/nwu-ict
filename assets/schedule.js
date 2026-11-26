@@ -110,6 +110,7 @@
             </div>
             <div class="row-action">
               <button class="btn" data-event="${t.id}">${icons.cal || ''} Add to calendar</button>
+              <a class="btn btn-quiet" href="materials.html?course=${encodeURIComponent(t.code)}">${icons.folder || ''} Materials</a>
             </div>
           </div>`;
       }).join('');

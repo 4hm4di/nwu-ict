@@ -46,7 +46,7 @@
         <div class="brand-text"><strong>Northwest University, Kano</strong>Faculty of Computing, Department of ICT</div>
       </div>
       <h1 class="reveal" style="--d:80ms">ICT class timetable</h1>
-      <p class="sub reveal" style="--d:160ms">Second semester, 2025/2026. Six courses, four days, lectures until 30 November.</p>
+      <p class="sub reveal" style="--d:160ms">Second semester exams, Mon 30 Nov to Thu 17 Dec. Your papers, venues and reminders are below.</p>
     </div>
     <div class="next-card reveal" style="--d:240ms" id="nextCard" aria-live="polite"></div>
   </div>
@@ -89,31 +89,43 @@
     <div class="test-list" id="testList"></div>
   </section>
 
-  <div class="section-head reveal">
-    <h2>Courses</h2>
-    <p>Add a class to your calendar or open its materials.</p>
-    <div class="tabs" id="tabs" role="tablist">
-      <span class="tab-indicator" aria-hidden="true"></span>
-      <button class="tab active" data-day="all">All</button>
-      <button class="tab" data-day="2"><span class="long">Tuesday</span><span class="short">Tue</span></button>
-      <button class="tab" data-day="3"><span class="long">Wednesday</span><span class="short">Wed</span></button>
-      <button class="tab" data-day="4"><span class="long">Thursday</span><span class="short">Thu</span></button>
-      <button class="tab" data-day="5"><span class="long">Friday</span><span class="short">Fri</span></button>
-    </div>
-  </div>
+  <section class="lectures reveal" id="lectures">
+    <button class="lectures-toggle" id="lecturesToggle" type="button" aria-expanded="false" aria-controls="lecturesBody">
+      <span>
+        <span class="lt-title">Lecture timetable</span>
+        <span class="lt-sub">Weekly classes, course materials and class reminders</span>
+      </span>
+      <span class="lt-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="lectures-body" id="lecturesBody" inert>
+      <div class="lectures-inner">
+        <div class="section-head">
+          <p>Add a class to your calendar or open its materials.</p>
+          <div class="tabs" id="tabs" role="tablist">
+            <span class="tab-indicator" aria-hidden="true"></span>
+            <button class="tab active" data-day="all">All</button>
+            <button class="tab" data-day="2"><span class="long">Tuesday</span><span class="short">Tue</span></button>
+            <button class="tab" data-day="3"><span class="long">Wednesday</span><span class="short">Wed</span></button>
+            <button class="tab" data-day="4"><span class="long">Thursday</span><span class="short">Thu</span></button>
+            <button class="tab" data-day="5"><span class="long">Friday</span><span class="short">Fri</span></button>
+          </div>
+        </div>
 
-  <div class="list" id="list"></div>
+        <div class="list" id="list"></div>
+      </div>
+    </div>
+  </section>
 
   <div class="note-row reveal">
     <div class="note">
       <p class="note-title">Latest updates</p>
       <div class="update">
-        <span class="update-date">22 Nov</span>
-        <p><strong>Materials:</strong> INS204 now has the lecturer’s use case, activity and E-R diagram notes. Open them from INS204’s <a href="materials.html?course=INS204">Materials</a>.</p>
-      </div>
-      <div class="update">
         <span class="update-date">26 Nov</span>
         <p><strong>Exams:</strong> the final exam timetable is out, with no changes to our six papers. First is GST212 on Mon 30 Nov, last is INS204 on Thu 17 Dec. See the <a href="#exams">exam timetable</a>.</p>
+      </div>
+      <div class="update">
+        <span class="update-date">22 Nov</span>
+        <p><strong>Materials:</strong> INS204 now has the lecturer’s use case, activity and E-R diagram notes. Open them from INS204’s <a href="materials.html?course=INS204">Materials</a>.</p>
       </div>
       <div class="update">
         <span class="update-date">6 Nov</span>
