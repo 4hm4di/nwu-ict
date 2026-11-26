@@ -1,10 +1,10 @@
 // Second semester 2025/2026 examinations: our six papers, taken from the
-// university's TENTATIVE examinations timetable. Dates can still change;
-// update this list if a revised timetable comes out.
+// university's FINAL examinations timetable (checked 26 Nov 2026; no changes
+// from the tentative one).
 //
 // Same fields as tests-data.js. Times are Lagos time, 24-hour clock.
-// (The PDF prints GST212's date as "Mon 30th DEC"; the surrounding days
-// show it is Monday 30 November.)
+// (The tentative PDF printed GST212's date as "Mon 30th DEC"; the final one
+// corrects it to 30th NOV.)
 
 const EXAMS = [
   {

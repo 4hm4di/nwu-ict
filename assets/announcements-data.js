@@ -13,12 +13,12 @@
 
 const ANNOUNCEMENTS = [
   {
-    id: "2026-11-21-exam-timetable",
-    title: "Exam timetable is out",
-    excerpt: "Our six papers run from GST212 on Mon 30 Nov to INS204 on Thu 17 Dec. It's the tentative timetable, so dates may still change. Add them all to your calendar in one tap.",
+    id: "2026-11-26-final-exam-timetable",
+    title: "Final exam timetable: no changes",
+    excerpt: "The final timetable is out and our six papers are the same as before: GST212 on Mon 30 Nov through to INS204 on Thu 17 Dec. If you've added them to your calendar, you're set.",
     url: "index.html#exams",
     action: "See the timetable",
-    date: "2026-11-21",
+    date: "2026-11-26",
     active: true
   },
   {
